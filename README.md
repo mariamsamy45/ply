@@ -445,7 +445,7 @@ The Notifications and Privacy controls are currently UI-level settings and are n
 | Media storage | Supabase Storage |
 | API style | REST |
 | Frontend hosting | Vercel |
-| Backend hosting | Render |
+| Backend hosting | Railway |
 | Source control | GitHub |
 
 ### Backend dependencies
@@ -1032,7 +1032,7 @@ Configure:
 DATABASE_URL=...
 JWT_SECRET=...
 CORS_ORIGIN=https://YOUR-VERCEL-DOMAIN
-API_BASE_URL=https://YOUR-RENDER-DOMAIN
+API_BASE_URL=https://YOUR-Railway-DOMAIN
 SUPABASE_URL=...
 SUPABASE_SERVICE_ROLE_KEY=...
 SUPABASE_STORAGE_BUCKET=ply-media
@@ -1053,12 +1053,12 @@ frontend
 Set:
 
 ```env
-VITE_API_URL=https://YOUR-RENDER-DOMAIN
+VITE_API_URL=https://YOUR-Railway-DOMAIN
 ```
 
 Deploy the frontend.
 
-Then update Render:
+Then update Railway:
 
 ```env
 CORS_ORIGIN=https://YOUR-VERCEL-DOMAIN
@@ -1494,7 +1494,7 @@ After deployment, test the application from the live Vercel URL rather than only
 
 ## 20. Submission summary
 
-Ply is a full-stack skill-barter platform that lets users exchange skills instead of money. Users create profiles, list what they can teach and want to learn, discover people, receive real compatibility matches, send and manage trade requests, chat, complete trades, leave reviews, and earn activity-based badges. The platform also includes a social layer with Instagram-style Stories, a private Story archive, persistent Highlights, and image/video posts with real likes and comments. It is built with React, TypeScript, Vite, Tailwind CSS, Node.js, Express, PostgreSQL/Supabase, JWT authentication, bcrypt password hashing, and Supabase Storage, with a deployment architecture using Vercel for the frontend and Render for the backend.
+Ply is a full-stack skill-barter platform that lets users exchange skills instead of money. Users create profiles, list what they can teach and want to learn, discover people, receive real compatibility matches, send and manage trade requests, chat, complete trades, leave reviews, and earn activity-based badges. The platform also includes a social layer with Instagram-style Stories, a private Story archive, persistent Highlights, and image/video posts with real likes and comments. It is built with React, TypeScript, Vite, Tailwind CSS, Node.js, Express, PostgreSQL/Supabase, JWT authentication, bcrypt password hashing, and Supabase Storage, with a deployment architecture using Vercel for the frontend and Railway for the backend.
 
 ### Biggest implementation challenge
 

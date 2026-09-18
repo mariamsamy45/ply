@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bone: 243 239 230;
+    --ink: 21 19 28;
+    --cobalt: 43 76 255;
+    --tangerine: 255 122 61;
+    --sage: 107 122 94;
+    --clay: 228 220 200;
+  }
+
+  :root.dark {
+    --bone: 21 19 28;
+    --ink: 243 239 230;
+    --cobalt: 110 130 255;
+    --tangerine: 255 143 92;
+    --sage: 126 151 111;
+    --clay: 48 45 55;
+  }
+
+  html {
+    background-color: rgb(var(--bone));
+    color: rgb(var(--ink));
+    color-scheme: light;
+  }
+
+  :root.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    font-family: "Space Grotesk", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: "Fraunces", serif;
+  }
+
+  :focus-visible {
+    outline: 3px solid #2B4CFF;
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer components {
+  .ink-border {
+    border: 2px solid rgb(var(--ink));
+  }
+
+  .btn {
+    @apply ink-border px-5 py-2.5 font-body font-medium text-sm tracking-tight transition-colors;
+  }
+
+  .btn-primary {
+    @apply btn bg-ink text-bone hover:bg-cobalt hover:border-cobalt;
+  }
+
+  .btn-secondary {
+    @apply btn bg-transparent text-ink hover:bg-ink hover:text-bone;
+  }
+
+  .btn-danger {
+    @apply btn bg-transparent text-ink hover:bg-tangerine hover:border-tangerine hover:text-ink;
+  }
+
+  .card {
+    @apply ink-border bg-bone p-5;
+  }
+
+  .pill {
+    @apply ink-border rounded-full px-3 py-1 text-xs font-body font-medium inline-block;
+  }
+
+  .input {
+    @apply ink-border bg-bone px-4 py-2.5 font-body text-sm w-full placeholder:text-ink/40;
+  }
+
+  /* The seam: the recurring diagonal-split motif used once per screen as Ply's signature move */
+  .seam {
+    position: relative;
+  }
+
+  .seam::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      115deg,
+      transparent 49.4%,
+      rgb(var(--ink)) 49.4%,
+      rgb(var(--ink)) 50.6%,
+      transparent 50.6%
+    );
+  }
+}
